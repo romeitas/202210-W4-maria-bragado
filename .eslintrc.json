@@ -6,11 +6,11 @@
     },
     "extends": ["airbnb-base", "prettier"],
 
+    "settings": {},
+
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "rules": {
-        "no-console": "off"
-    }
+    "rules": {}
 }

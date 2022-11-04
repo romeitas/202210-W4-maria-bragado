@@ -1,3 +1,4 @@
+/* eslint-disable guard-for-in */
 import strictEquals from './strictEquals.js';
 
 const results = [
@@ -10,5 +11,28 @@ const results = [
     { a: false, b: false, result: strictEquals(false, false) },
     { a: 'water', b: 'oil', result: strictEquals('water', 'oil') },
 ];
+
+const createTable = () => {
+    let stringTable = '<tr><th>A</th><th>B</th><th>RESULT</th></tr>';
+    results.forEach((item) => {
+        let fila = '<tr> <td>';
+        fila += item.a;
+        fila += '</td>';
+
+        fila = '<td>';
+        fila += item.b;
+        fila += '</td>';
+
+        fila = '<td>';
+        fila += item.result;
+        fila += '</td>';
+
+        fila += '</tr>';
+        stringTable += fila;
+    });
+    return stringTable;
+};
+
+document.getElementById('table').innerHTML = createTable(results);
 
 console.log(results);
